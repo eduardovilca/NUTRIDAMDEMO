@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Nutridam | Nutrición y salud integral. Atención cercana, personalizada y enfocada en tu bienestar." name="description"/>
+<title>Nutridam | Nutrición y Salud Integral</title>
+<style>
+    :root{
+      --turquoise:#2bb8b2;
+      --turquoise-dark:#189b96;
+      --green:#7fba4a;
+      --green-soft:#edf7e9;
+      --mint:#eaf8f6;
+      --ink:#263238;
+      --muted:#667478;
+      --line:#dce9e7;
+      --white:#ffffff;
+      --shadow:0 18px 50px rgba(38,50,56,.10);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.90);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,233,231,.75)}
+    .nav-inner{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand img{width:190px;height:auto}
+    .menu{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;color:#4d5b5f}
+    .menu a:hover{color:var(--turquoise-dark)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:999px;font-weight:700;transition:.2s ease;border:1px solid transparent}
+    .btn-primary{background:var(--turquoise);color:white;box-shadow:0 10px 24px rgba(43,184,178,.23)}
+    .btn-primary:hover{background:var(--turquoise-dark);transform:translateY(-1px)}
+    .btn-ghost{border-color:var(--line);background:white;color:var(--ink)}
+    .btn-ghost:hover{border-color:var(--turquoise);color:var(--turquoise-dark)}
+    .hero{position:relative;overflow:hidden;padding:86px 0 68px;background:linear-gradient(135deg,#fff 0%,#f6fbfa 50%,#eef9f6 100%)}
+    .hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:70px solid rgba(43,184,178,.08);right:-160px;top:-150px}
+    .hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:44px solid rgba(127,186,74,.08);left:-120px;bottom:-160px}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 13px;border-radius:999px;background:var(--mint);color:var(--turquoise-dark);font-size:13px;font-weight:700;letter-spacing:.02em}
+    .eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+    h1,h2,h3{font-family:Inter,Arial,sans-serif;line-height:1.12;margin:0}
+    h1{font-size:clamp(44px,6vw,72px);letter-spacing:-.045em;margin:20px 0 24px;max-width:760px}
+    h1 span{color:var(--turquoise-dark)}
+    .hero p{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:#5c6b6f;font-size:14px;font-weight:600}
+    .hero-note span{display:flex;align-items:center;gap:8px}
+    .hero-note i{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+    .visual{position:relative;min-height:520px}
+    .photo-card{position:absolute;inset:18px 0 0 40px;border-radius:38px;background:linear-gradient(145deg,#dff4f1,#f6fbfa);box-shadow:var(--shadow);overflow:hidden;border:1px solid #e6f0ee}
+    .photo-content{height:100%;padding:42px;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(circle at 75% 20%, rgba(127,186,74,.28), transparent 26%),radial-gradient(circle at 28% 30%, rgba(43,184,178,.28), transparent 32%),linear-gradient(135deg,#effaf8,#f9fcfb)}
+    .illustration{position:absolute;inset:42px 42px auto 42px;height:300px}
+    .plate{position:absolute;width:220px;height:220px;border-radius:50%;background:white;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 20px 38px rgba(38,50,56,.10)}
+    .plate:before{content:"";position:absolute;inset:22px;border-radius:50%;border:18px solid var(--mint)}
+    .leaf{position:absolute;width:74px;height:34px;background:var(--green);border-radius:100% 0 100% 0;transform:rotate(-28deg);opacity:.95}
+    .leaf.one{left:58px;top:35px}.leaf.two{right:55px;top:70px;transform:rotate(38deg);background:#96c968}.leaf.three{left:70px;bottom:40px;transform:rotate(30deg);background:#54c7c1}.leaf.four{right:45px;bottom:50px;transform:rotate(-42deg);background:#2bb8b2}
+    .mini-badge{align-self:flex-start;background:white;padding:16px 18px;border-radius:18px;box-shadow:0 14px 34px rgba(38,50,56,.09);max-width:300px}
+    .mini-badge strong{display:block;font-family:Inter,Arial,sans-serif;font-size:18px;margin-bottom:3px}.mini-badge span{font-size:14px;color:var(--muted)}
+    section{padding:88px 0}
+    .section-label{color:var(--turquoise-dark);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+    .section-title{font-size:clamp(34px,4vw,50px);letter-spacing:-.035em;margin-bottom:20px}
+    .section-copy{font-size:18px;color:var(--muted);max-width:720px;margin:0}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+    .about-panel{background:linear-gradient(140deg,var(--mint),#f8fcfb);border-radius:var(--radius);padding:42px;border:1px solid var(--line);min-height:420px;display:flex;flex-direction:column;justify-content:space-between}
+    .about-panel .quote{font-family:Inter,Arial,sans-serif;font-size:34px;line-height:1.23;letter-spacing:-.03em;margin:0 0 34px}
+    .about-panel .quote span{color:var(--turquoise-dark)}
+    .about-tag{display:inline-block;background:white;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:700;color:#58666a}
+    .about-text p{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .services{background:#f8fbfa}
+    .section-head{display:flex;justify-content:space-between;gap:32px;align-items:flex-end;margin-bottom:42px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:white;border:1px solid #e3ecea;border-radius:24px;padding:30px;min-height:300px;transition:.25s ease;box-shadow:0 10px 30px rgba(38,50,56,.045)}
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--mint);font-size:26px;margin-bottom:26px}
+    .card:nth-child(2) .icon{background:var(--green-soft)}
+    .card:nth-child(3) .icon{background:#f0f7ee}
+    .card h3{font-size:24px;margin-bottom:14px}.card p{color:var(--muted);margin:0 0 22px}.card a{font-weight:700;color:var(--turquoise-dark)}
+    .benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+    .benefit-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .benefit{padding:24px;border-radius:20px;border:1px solid var(--line);background:#fff}
+    .benefit b{display:block;font-family:Inter,Arial,sans-serif;font-size:17px;margin-bottom:7px}.benefit span{font-size:14px;color:var(--muted)}
+    .cta{padding-top:20px}
+    .cta-box{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--turquoise-dark),var(--turquoise));color:white;border-radius:34px;padding:56px;display:flex;justify-content:space-between;gap:40px;align-items:center}
+    .cta-box:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:44px solid rgba(255,255,255,.12);right:-80px;top:-90px}
+    .cta-box h2{font-size:clamp(34px,4vw,50px);max-width:620px;position:relative;z-index:2}.cta-box p{margin:12px 0 0;color:rgba(255,255,255,.84);position:relative;z-index:2}.cta-box .btn{background:white;color:var(--turquoise-dark);position:relative;z-index:2;white-space:nowrap}
+    .contact-grid{display:grid;grid-template-columns:1fr .95fr;gap:56px;align-items:start}
+    .contact-box{background:#f8fbfa;border:1px solid var(--line);border-radius:26px;padding:34px}
+    .contact-row{padding:16px 0;border-bottom:1px solid var(--line)}.contact-row:last-child{border-bottom:0}.contact-row small{display:block;color:var(--muted);margin-bottom:3px}.contact-row strong{font-size:17px}
+    footer{padding:34px 0 44px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.footer-inner img{width:132px}.footer-links{display:flex;gap:18px}
+    @media(max-width:900px){.menu a:not(.btn){display:none}.hero{padding-top:58px}.hero-grid,.about-grid,.benefits-grid,.contact-grid{grid-template-columns:1fr}.visual{min-height:450px}.photo-card{inset:10px 0 0}.cards{grid-template-columns:1fr}.section-head{display:block}.benefit-list{grid-template-columns:1fr 1fr}.cta-box{padding:42px;display:block}.cta-box .btn{margin-top:24px}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1120px)}.nav-inner{height:74px}.brand img{width:165px}.menu{gap:8px}.menu .btn{padding:11px 14px;font-size:13px}h1{font-size:44px}.hero p,.section-copy,.about-text p{font-size:17px}.visual{min-height:390px}.photo-content{padding:24px}.illustration{inset:34px 22px auto;height:250px}.plate{width:180px;height:180px}.about-panel{padding:28px;min-height:340px}.about-panel .quote{font-size:27px}.benefit-list{grid-template-columns:1fr}.cta-box{padding:34px 26px;border-radius:26px}.footer-inner{align-items:flex-start;flex-direction:column}}
+  
+    .hero-photo{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(.98)}
+    .photo-card:after{content:"Imagen referencial";position:absolute;right:18px;bottom:18px;background:rgba(255,255,255,.92);color:#5f6b6e;font-size:12px;font-weight:700;padding:7px 10px;border-radius:999px;box-shadow:0 6px 18px rgba(38,50,56,.08)}
+    .service-image{width:100%;height:150px;object-fit:cover;border-radius:18px;margin-bottom:20px}
+    .ref-note{display:inline-block;margin-top:10px;font-size:11px;color:#7a878a}
+    .contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .contact-links a{padding:10px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:700;background:white;color:#506064}
+    .contact-links a:hover{border-color:var(--turquoise);color:var(--turquoise-dark)}
+    .contact-box a{color:var(--turquoise-dark)}
+    .hours{display:grid;grid-template-columns:1fr auto;gap:8px 18px;margin-top:8px;font-size:14px;color:var(--muted)}
+    .source-note{font-size:12px;color:#899497;margin-top:12px}
+  </style>
+</head>
+<body>
+<header class="nav">
+<div class="container nav-inner">
+<a class="brand" href="#inicio"><img alt="Nutridam" src="assets/nutridam-logo.png"/></a>
+<nav aria-label="Navegación principal" class="menu">
+<a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a>
+<a class="btn btn-primary" href="https://wa.me/51999604271?text=Hola%20Nutridam,%20quisiera%20agendar%20una%20cita" rel="noopener" target="_blank">Agenda tu cita</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Nutrición · Salud Integral</div>
+<h1>Tu bienestar empieza por <span>sentirte bien contigo.</span></h1>
+<p>En Nutridam te acompañamos a cuidar tu alimentación, tu salud y tu bienestar con una atención cercana, profesional y adaptada a ti.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="https://wa.me/51999604271?text=Hola%20Nutridam,%20quisiera%20agendar%20una%20cita" rel="noopener" target="_blank">Agenda tu cita →</a>
+<a class="btn btn-ghost" href="#servicios">Conoce nuestros servicios</a>
+</div>
+<div class="hero-note"><span><i></i> Atención personalizada</span><span><i></i> Enfoque integral</span><span><i></i> Acompañamiento cercano</span></div>
+</div>
+<div aria-label="Imagen referencial de consulta nutricional" class="visual">
+<div class="photo-card">
+<img alt="Consulta nutricional, imagen referencial" class="hero-photo" src="assets/hero-nutricion.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section id="nosotros">
+<div class="container about-grid">
+<div class="about-panel">
+<div><div class="section-label">Nosotros</div><p class="quote">Creemos en una atención que <span>escucha, acompaña y se adapta a ti.</span></p></div>
+<span class="about-tag">Nutridam · Salud Integral</span>
+</div>
+<div class="about-text">
+<div class="section-label">Nuestra forma de acompañarte</div>
+<h2 class="section-title">Cuidamos tu salud de manera integral</h2>
+<p>En Nutridam entendemos que cada persona tiene necesidades, hábitos y objetivos diferentes. Por eso nos tomamos el tiempo de conocerte y brindarte una atención personalizada.</p>
+<p>Queremos que cuidar de ti sea un proceso cercano, sostenible y pensado para tu bienestar, acompañándote con orientación profesional en cada etapa.</p>
+<a class="btn btn-ghost" href="#contacto">Conócenos mejor</a>
+</div>
+</div>
+</section>
+<section class="services" id="servicios">
+<div class="container">
+<div class="section-head">
+<div><div class="section-label">Servicios</div><h2 class="section-title">Servicios pensados para tu bienestar</h2></div>
+<p class="section-copy">Integramos distintas áreas de cuidado para que encuentres un acompañamiento más completo y personalizado.</p>
+</div>
+<div class="cards">
+<article class="card"><img alt="Atención nutricional referencial" class="service-image" src="assets/consulta-nutricional.jpg"/><h3>Nutrición</h3><p>Evaluamos tus hábitos y objetivos para orientarte con un plan adaptado a tu estilo de vida y necesidades.</p><a href="#contacto">Quiero más información →</a><span class="ref-note">Imagen referencial</span></article>
+<article class="card"><img alt="Atención profesional de bienestar, imagen referencial" class="service-image" src="assets/bienestar-integral.jpg"/><h3>Terapia física</h3><p>Te acompañamos en tu recuperación y bienestar físico con una atención enfocada en tus necesidades individuales.</p><a href="#contacto">Quiero más información →</a><span class="ref-note">Imagen referencial</span></article>
+<article class="card"><img alt="Bienestar integral, imagen referencial" class="service-image" src="assets/acompanamiento.jpg"/><h3>Bienestar integral</h3><p>Complementamos tu cuidado con alternativas orientadas al bienestar corporal, facial y al cuidado personal.</p><a href="#contacto">Quiero más información →</a><span class="ref-note">Imagen referencial</span></article>
+</div>
+</div>
+</section>
+<section>
+<div class="container benefits-grid">
+<div>
+<div class="section-label">¿Por qué Nutridam?</div>
+<h2 class="section-title">Un acompañamiento pensado en ti</h2>
+<p class="section-copy">No creemos en soluciones iguales para todos. Nuestro enfoque parte de conocerte, entenderte y construir contigo un camino realista hacia tu bienestar.</p>
+</div>
+<div class="benefit-list">
+<div class="benefit"><b>Atención personalizada</b><span>Cada proceso parte de tus necesidades y objetivos.</span></div>
+<div class="benefit"><b>Enfoque integral</b><span>Miramos tu bienestar desde distintas áreas de cuidado.</span></div>
+<div class="benefit"><b>Acompañamiento cercano</b><span>Estamos presentes durante tu proceso y evolución.</span></div>
+<div class="benefit"><b>Compromiso profesional</b><span>Trabajamos con criterio, escucha y orientación responsable.</span></div>
+</div>
+</div>
+</section>
+<section class="cta">
+<div class="container">
+<div class="cta-box">
+<div><h2>Tu bienestar no necesita cambios extremos. Necesita un plan que funcione para ti.</h2><p>Conversemos y descubre cómo podemos acompañarte.</p></div>
+<a class="btn" href="https://wa.me/51999604271?text=Hola%20Nutridam,%20quisiera%20recibir%20más%20información" rel="noopener" target="_blank">Escríbenos por WhatsApp →</a>
+</div>
+</div>
+</section>
+<section id="contacto">
+<div class="container contact-grid">
+<div>
+<div class="section-label">Contacto</div>
+<h2 class="section-title">Empieza hoy a cuidar de ti</h2>
+<p class="section-copy">¿Quieres conocer nuestros servicios o agendar una cita? Escríbenos y te orientaremos.</p>
+<div class="contact-links">
+<a href="https://wa.me/51999604271?text=Hola%20Nutridam,%20quisiera%20agendar%20una%20cita" rel="noopener" target="_blank">WhatsApp</a>
+<a href="mailto:nutridam.terapias.alternativas@gmail.com">Correo</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida%20Agustin%20de%20la%20Rosa%20Toro%20781%20San%20Luis%20Lima" rel="noopener" target="_blank">Abrir ubicación</a>
+</div>
+<p class="source-note">Datos públicos encontrados en directorios empresariales. Conviene validarlos con Nutridam antes de publicar la versión final.</p>
+</div>
+<div class="contact-box">
+<div class="contact-row"><small>Dirección</small><strong>Av. Agustín de la Rosa Toro 781, San Luis 15021, Lima</strong></div>
+<div class="contact-row"><small>WhatsApp / Teléfono</small><strong><a href="https://wa.me/51999604271" rel="noopener" target="_blank">+51 999 604 271</a></strong></div>
+<div class="contact-row"><small>Correo</small><strong><a href="mailto:nutridam.terapias.alternativas@gmail.com">nutridam.terapias.alternativas@gmail.com</a></strong></div>
+<div class="contact-row"><small>Horario publicado</small><div class="hours"><span>Lunes a viernes</span><b>9:30 – 20:00</b><span>Sábado</span><b>9:00 – 14:00</b><span>Domingo</span><b>Cerrado</b></div></div>
+<div class="contact-row"><small>Facebook</small><strong>Perfil público localizado · enlace por confirmar</strong></div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-inner">
+<div><img alt="Nutridam" src="assets/nutridam-logo.png"/><div style="margin-top:12px">Nutrición · Salud Integral</div></div>
+<div class="footer-links"><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div>
+<div>© 2026 Nutridam</div>
+</div>
+</footer>
+</body>
+</html>
